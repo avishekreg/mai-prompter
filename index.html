@@ -438,6 +438,197 @@
       font-weight: 650;
     }
 
+    .enterprise-cta {
+      display: flex;
+      justify-content: center;
+      padding: 28px 20px 0;
+      background: #ffffff;
+    }
+
+    .enterprise-pill {
+      max-width: calc(100vw - 40px);
+      border: 1px solid rgba(20, 24, 20, 0.08);
+      border-radius: 999px;
+      background: #f7f8f6;
+      color: rgba(20, 24, 20, 0.68);
+      padding: 10px 18px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .enterprise-pill a,
+    .footer-link {
+      color: var(--accent-strong);
+      text-decoration: none;
+      font-weight: 850;
+    }
+
+    .enterprise-pill a:hover,
+    .footer-link:hover {
+      color: var(--accent);
+    }
+
+    .site-footer {
+      border-top: 1px solid rgba(20, 24, 20, 0.1);
+      background: #ffffff;
+      color: rgba(20, 24, 20, 0.64);
+      padding: 34px clamp(20px, 5vw, 72px) 28px;
+    }
+
+    .footer-shell {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(260px, 1.7fr) minmax(160px, 0.9fr) minmax(140px, 0.7fr) minmax(210px, 1fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .footer-tagline {
+      max-width: 430px;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.58;
+      font-weight: 650;
+    }
+
+    .footer-heading {
+      margin: 0 0 12px;
+      color: var(--accent-strong);
+      font-size: 10px;
+      font-weight: 950;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .footer-nav {
+      display: grid;
+      gap: 9px;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      color: rgba(20, 24, 20, 0.62);
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    .app-badges {
+      display: grid;
+      gap: 8px;
+      justify-items: start;
+    }
+
+    .store-badge {
+      min-height: 44px;
+      min-width: 172px;
+      border: 1px solid rgba(20, 24, 20, 0.12);
+      border-radius: 10px;
+      background: #101511;
+      color: #ffffff;
+      padding: 7px 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .store-badge svg {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 auto;
+    }
+
+    .store-badge span {
+      display: grid;
+      gap: 1px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 9px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .store-badge strong {
+      color: #ffffff;
+      font-size: 15px;
+      line-height: 1.1;
+      font-weight: 920;
+      letter-spacing: 0;
+    }
+
+    .footer-legal {
+      margin: 34px 0 0;
+      color: rgba(20, 24, 20, 0.62);
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 650;
+    }
+
+    .ios-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 76;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(16, 21, 17, 0.44);
+      backdrop-filter: blur(14px) saturate(120%);
+    }
+
+    .ios-modal.hidden {
+      display: none;
+    }
+
+    .ios-dialog {
+      width: min(420px, 100%);
+      border: 1px solid rgba(20, 24, 20, 0.12);
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 28px 90px rgba(20, 24, 20, 0.2);
+      padding: 24px;
+    }
+
+    .ios-eyebrow {
+      margin: 0;
+      color: var(--accent-strong);
+      font-size: 10px;
+      font-weight: 950;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .ios-title {
+      margin: 8px 0 0;
+      color: var(--text);
+      font-size: 22px;
+      line-height: 1.1;
+      font-weight: 920;
+    }
+
+    .ios-copy {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.48;
+      font-weight: 650;
+    }
+
+    .ios-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
     .landing-demo {
       position: fixed;
       inset: 0;
@@ -563,6 +754,10 @@
       .pricing-grid {
         grid-template-columns: 1fr;
       }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 560px) {
@@ -590,6 +785,20 @@
 
       .hero-control-strip {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .enterprise-pill {
+        border-radius: 14px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ios-actions .button,
+      .ios-actions .store-badge {
+        width: 100%;
+        justify-content: center;
       }
     }
 
@@ -2039,6 +2248,97 @@
         </div>
       </div>
     </section>
+
+    <div class="enterprise-cta">
+      <div class="enterprise-pill">
+        Need a custom creator, studio, or enterprise rollout?
+        <a href="mailto:hello@syncrasystems.com">Contact Syncra Systems LLP</a>
+        for onboarding.
+      </div>
+    </div>
+
+    <footer class="site-footer" aria-label="mAIPrompter footer">
+      <div class="footer-shell">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-tagline">
+              mAIPrompter is part of Syncra Systems' creator infrastructure roadmap, helping founders,
+              educators, coaches, and teams record camera-ready videos with browser-based prompting,
+              voice-responsive reading, and local-first recording controls.
+            </p>
+          </div>
+
+          <div>
+            <p class="footer-heading">Get the app</p>
+            <div class="app-badges" role="group" aria-label="Download mAIPrompter mobile apps">
+              <a class="store-badge" href="/downloads/android.html" aria-label="Get mAIPrompter for Android">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#4285F4" d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12 3.84 21.85C3.34 21.61 3 21.09 3 20.5Z" />
+                  <path fill="#34A853" d="M16.81 15.12 6.05 21.34 14.54 12.85 16.81 15.12Z" />
+                  <path fill="#FBBC04" d="M20.16 10.81c.34.27.59.69.59 1.19 0 .5-.25.92-.59 1.19l-2.27 1.31-2.5-2.5 2.5-2.5 2.27 1.31Z" />
+                  <path fill="#EA4335" d="M6.05 2.66 16.81 8.88 14.54 11.15 6.05 2.66Z" />
+                </svg>
+                <span>Get it on <strong>Google Play</strong></span>
+              </a>
+              <button class="store-badge" id="iosBadgeButton" type="button" aria-label="Download mAIPrompter on the App Store, coming soon">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.48-.12-1.06.466-2.21 1.115-2.96.748-.86 2.066-1.49 3.049-1.6zM20.75 17.13c-.577 1.32-1.253 2.62-2.262 3.73-1.01 1.11-2.188 2.35-3.756 2.35-1.568 0-1.965-.93-3.662-.93-1.697 0-2.053.9-3.656.93-1.603.03-2.823-1.22-3.4-2.54-1.468-3.35-1.295-8.17.72-10.36.99-1.09 2.462-1.73 3.892-1.73 1.43 0 2.334.93 3.518.93 1.183 0 1.901-.93 3.612-.93 1.29 0 2.646.7 3.636 1.91-3.19 1.74-2.673 6.27.518 7.57z" />
+                </svg>
+                <span>Download on the <strong>App Store</strong></span>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <p class="footer-heading">Platform</p>
+            <nav class="footer-nav" aria-label="Platform links">
+              <a class="footer-link" href="/">Home</a>
+              <a class="footer-link" href="#features">Features</a>
+              <a class="footer-link" href="#pricing">Pricing</a>
+              <a class="footer-link" href="#signin" id="footerSignInLink">Sign in</a>
+            </nav>
+          </div>
+
+          <div>
+            <p class="footer-heading">Compliance</p>
+            <nav class="footer-nav" aria-label="Legal policies">
+              <a class="footer-link" href="/legal/terms">Terms &amp; Conditions</a>
+              <a class="footer-link" href="/legal/privacy">Privacy Policy</a>
+              <a class="footer-link" href="/legal/refund">Refund &amp; Cancellation Policy</a>
+              <a class="footer-link" href="mailto:privacy@syncrasystems.com">Privacy contact</a>
+            </nav>
+          </div>
+        </div>
+
+        <p class="footer-legal">
+          mAIPrompter is an official product developed, owned, and maintained by Syncra Systems LLP.
+          All rights reserved. © <span id="footerYear">2026</span> Syncra Systems LLP.
+        </p>
+      </div>
+    </footer>
+  </section>
+
+  <section class="ios-modal hidden" id="iosModal" aria-label="mAIPrompter iOS app coming soon">
+    <div class="ios-dialog" role="dialog" aria-modal="true" aria-labelledby="iosComingSoonTitle">
+      <p class="ios-eyebrow">iOS app</p>
+      <h2 class="ios-title" id="iosComingSoonTitle">Coming soon</h2>
+      <p class="ios-copy">
+        The mAIPrompter iOS app is in development. Android support is planned, and the web platform
+        is available now on Safari, Chrome, and Edge.
+      </p>
+      <div class="ios-actions">
+        <a class="store-badge" href="/downloads/android.html" aria-label="Get mAIPrompter Android app">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12 3.84 21.85C3.34 21.61 3 21.09 3 20.5Z" />
+            <path fill="#34A853" d="M16.81 15.12 6.05 21.34 14.54 12.85 16.81 15.12Z" />
+            <path fill="#FBBC04" d="M20.16 10.81c.34.27.59.69.59 1.19 0 .5-.25.92-.59 1.19l-2.27 1.31-2.5-2.5 2.5-2.5 2.27 1.31Z" />
+            <path fill="#EA4335" d="M6.05 2.66 16.81 8.88 14.54 11.15 6.05 2.66Z" />
+          </svg>
+          <span>Get Android <strong>App</strong></span>
+        </a>
+        <button class="button" id="closeIosModalButton" type="button">Close</button>
+      </div>
+    </div>
   </section>
 
   <section class="landing-demo hidden" id="landingDemo" aria-label="Try mAIPrompter demo">
@@ -2588,6 +2888,11 @@ Sign in when you are ready to record for real.</p>
       const demoResetButton = document.getElementById("demoResetButton");
       const demoVoiceButton = document.getElementById("demoVoiceButton");
       const demoStatus = document.getElementById("demoStatus");
+      const iosBadgeButton = document.getElementById("iosBadgeButton");
+      const iosModal = document.getElementById("iosModal");
+      const closeIosModalButton = document.getElementById("closeIosModalButton");
+      const footerSignInLink = document.getElementById("footerSignInLink");
+      const footerYear = document.getElementById("footerYear");
       const authGate = document.getElementById("authGate");
       const authForm = document.getElementById("authForm");
       const authEmail = document.getElementById("authEmail");
@@ -3097,6 +3402,20 @@ Sign in when you are ready to record for real.</p>
         const target = document.getElementById(id);
         if (!target) return;
         target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function openIosModal() {
+        iosModal.classList.remove("hidden");
+      }
+
+      function closeIosModal() {
+        iosModal.classList.add("hidden");
+      }
+
+      function handleIosModalClick(event) {
+        if (event.target === iosModal) {
+          closeIosModal();
+        }
       }
 
       function applyDemoScroll() {
@@ -4811,6 +5130,11 @@ Sign in when you are ready to record for real.</p>
           event.preventDefault();
           saveAndRead();
         }
+
+        if (event.key === "Escape" && !iosModal.classList.contains("hidden")) {
+          event.preventDefault();
+          closeIosModal();
+        }
       }
 
       function handlePopoutMessage(event) {
@@ -4850,6 +5174,13 @@ Sign in when you are ready to record for real.</p>
       landingStartButton.addEventListener("click", showAuthGate);
       landingLoginButton.addEventListener("click", showAuthGate);
       landingFinalButton.addEventListener("click", showAuthGate);
+      footerSignInLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        showAuthGate();
+      });
+      iosBadgeButton.addEventListener("click", openIosModal);
+      closeIosModalButton.addEventListener("click", closeIosModal);
+      iosModal.addEventListener("click", handleIosModalClick);
       landingDemoButton.addEventListener("click", openLandingDemo);
       closeDemoButton.addEventListener("click", closeLandingDemo);
       demoPlayButton.addEventListener("click", toggleDemoScroll);
@@ -4903,6 +5234,7 @@ Sign in when you are ready to record for real.</p>
         stopCameraStream();
       });
 
+      footerYear.textContent = String(new Date().getFullYear());
       renderScript();
       listMediaDevices().catch(() => {});
       closeControls();
