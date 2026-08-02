@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+*.mp4
+*.webm
+*.mov
+*.tmp
+.vercel
+node_modules

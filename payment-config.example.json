@@ -1,0 +1,57 @@
+{
+  "brand": "mAIPrompter",
+  "legalEntity": "Synchra Systems LLP",
+  "currency": "INR",
+  "mode": "test",
+  "activeGateway": "razorpay",
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "monthlyPrice": 99,
+      "promptLimit": 30,
+      "watermark": false
+    },
+    {
+      "id": "creator",
+      "name": "Creator",
+      "monthlyPrice": 149,
+      "promptLimit": 100,
+      "watermark": false
+    },
+    {
+      "id": "studio",
+      "name": "Studio",
+      "monthlyPrice": 200,
+      "promptLimit": "unlimited",
+      "watermark": false
+    }
+  ],
+  "freeTier": {
+    "promptLimit": 3,
+    "charactersPerPrompt": 1000,
+    "watermarkText": "mAIPrompter | Created by Synchra Systems LLP"
+  },
+  "gateways": {
+    "razorpay": {
+      "enabled": false,
+      "keyId": "rzp_test_replace_me",
+      "webhookSecret": "store_on_server_only",
+      "planIds": {
+        "starter": "",
+        "creator": "",
+        "studio": ""
+      }
+    },
+    "stripe": {
+      "enabled": false,
+      "publishableKey": "pk_test_replace_me",
+      "webhookSecret": "store_on_server_only",
+      "priceIds": {
+        "starter": "",
+        "creator": "",
+        "studio": ""
+      }
+    }
+  }
+}
