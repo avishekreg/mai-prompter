@@ -156,7 +156,8 @@
       gap: clamp(48px, 6vw, 110px);
       padding: clamp(42px, 6vw, 80px) clamp(24px, 5vw, 92px) clamp(48px, 7vw, 86px);
       background:
-        radial-gradient(circle at 76% 18%, rgba(15, 143, 109, 0.14), transparent 27rem),
+        radial-gradient(circle at 76% 18%, rgba(15, 143, 109, 0.16), transparent 27rem),
+        radial-gradient(circle at 14% 84%, rgba(65, 214, 166, 0.12), transparent 24rem),
         linear-gradient(180deg, #fbfcf8 0%, #eef2ec 100%);
     }
 
@@ -186,6 +187,41 @@
       font-size: clamp(17px, 2vw, 22px);
       line-height: 1.42;
       font-weight: 650;
+    }
+
+    .landing-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      max-width: 660px;
+      margin-top: 32px;
+      border: 1px solid rgba(20, 24, 20, 0.09);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(20, 24, 20, 0.09);
+    }
+
+    .landing-metric {
+      min-height: 104px;
+      display: grid;
+      align-content: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.72);
+      padding: 18px;
+    }
+
+    .landing-metric strong {
+      color: #101511;
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    .landing-metric span {
+      color: rgba(20, 24, 20, 0.64);
+      font-size: 12px;
+      line-height: 1.25;
+      font-weight: 800;
     }
 
     .landing-actions {
@@ -256,34 +292,42 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.18), transparent 11rem),
-        linear-gradient(160deg, rgba(246, 247, 242, 0.18), transparent 38%),
-        linear-gradient(180deg, #273129, #0c100d);
+        radial-gradient(circle at 50% 32%, rgba(246, 247, 242, 0.22), transparent 12rem),
+        linear-gradient(160deg, rgba(246, 247, 242, 0.14), transparent 40%),
+        linear-gradient(180deg, #222c25, #080c09);
     }
 
-    .hero-face {
+    .hero-video-plane::before {
+      content: "";
       position: absolute;
-      left: 50%;
-      top: 16%;
-      width: min(280px, 42%);
-      aspect-ratio: 1;
-      border-radius: 50%;
+      inset: 18% 12% 16%;
+      border-radius: 28px;
       background:
-        radial-gradient(circle at 50% 38%, rgba(247, 223, 196, 0.95), rgba(181, 135, 104, 0.82) 42%, transparent 43%),
-        radial-gradient(circle at 50% 76%, rgba(246, 247, 242, 0.82), rgba(246, 247, 242, 0.2) 38%, transparent 39%);
-      opacity: 0.94;
-      transform: translateX(-50%);
-      filter: saturate(94%);
+        radial-gradient(circle at 50% 30%, rgba(239, 232, 218, 0.68), transparent 5.8rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.02));
+      opacity: 0.74;
+    }
+
+    .hero-video-plane::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+      opacity: 0.35;
     }
 
     .hero-prompt-band {
       position: absolute;
       left: 7%;
       right: 7%;
-      top: 8%;
+      top: 7%;
       border: 1px solid rgba(65, 214, 166, 0.24);
       border-radius: 16px;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.72);
       box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
       padding: 18px 22px;
       color: #f7f5ee;
@@ -307,6 +351,75 @@
       font-size: clamp(20px, 2.1vw, 30px);
       line-height: 1.22;
       font-weight: 850;
+    }
+
+    .hero-live-frame {
+      position: absolute;
+      left: 7%;
+      right: 7%;
+      top: 32%;
+      bottom: 19%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.16), transparent 9rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    }
+
+    .hero-live-frame::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 18%;
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 36% 34%, rgba(255, 255, 255, 0.2), transparent 22%),
+        linear-gradient(180deg, #d7b69a, #a9785b);
+      transform: translateX(-50%);
+      box-shadow: 0 52px 0 34px rgba(234, 238, 226, 0.26);
+    }
+
+    .hero-live-frame::after {
+      content: "Natural camera preview";
+      position: absolute;
+      left: 16px;
+      bottom: 14px;
+      border: 1px solid rgba(65, 214, 166, 0.25);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.42);
+      color: rgba(247, 245, 238, 0.74);
+      padding: 7px 10px;
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .hero-popout-chip {
+      position: absolute;
+      right: 9%;
+      top: 48%;
+      max-width: 230px;
+      border: 1px solid rgba(65, 214, 166, 0.28);
+      border-radius: 14px;
+      background: rgba(247, 245, 238, 0.92);
+      color: #101511;
+      padding: 12px 14px;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
+      font-size: 13px;
+      line-height: 1.32;
+      font-weight: 850;
+    }
+
+    .hero-popout-chip span {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--accent-strong);
+      font-size: 10px;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     .hero-control-strip {
@@ -342,6 +455,19 @@
     .landing-section {
       padding: clamp(56px, 8vw, 108px) clamp(20px, 5vw, 72px);
       background: #f6f7f2;
+    }
+
+    .landing-section.alt {
+      background: #ffffff;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: rgba(20, 24, 20, 0.66);
+      font-size: 17px;
+      line-height: 1.5;
+      font-weight: 650;
     }
 
     .section-shell {
@@ -419,6 +545,142 @@
       color: rgba(247, 245, 238, 0.68);
     }
 
+    .proof-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 34px;
+      border: 1px solid rgba(20, 24, 20, 0.1);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(20, 24, 20, 0.1);
+    }
+
+    .proof-item {
+      min-height: 150px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 24px;
+    }
+
+    .proof-item strong {
+      display: block;
+      color: #101511;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    .proof-item span {
+      display: block;
+      margin-top: 10px;
+      color: rgba(20, 24, 20, 0.64);
+      font-size: 13px;
+      line-height: 1.42;
+      font-weight: 700;
+    }
+
+    .workflow-grid,
+    .usecase-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .workflow-step,
+    .usecase-item {
+      border-top: 2px solid rgba(15, 143, 109, 0.22);
+      padding-top: 18px;
+    }
+
+    .workflow-step span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(15, 143, 109, 0.1);
+      color: var(--accent-strong);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .workflow-step strong,
+    .usecase-item strong {
+      display: block;
+      margin-top: 14px;
+      color: #101511;
+      font-size: 19px;
+      line-height: 1.14;
+      font-weight: 920;
+    }
+
+    .workflow-step p,
+    .usecase-item p {
+      margin: 10px 0 0;
+      color: rgba(20, 24, 20, 0.64);
+      font-size: 14px;
+      line-height: 1.46;
+      font-weight: 650;
+    }
+
+    .comparison-wrap {
+      margin-top: 34px;
+      border: 1px solid rgba(20, 24, 20, 0.1);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      color: rgba(20, 24, 20, 0.68);
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 18px;
+      border-bottom: 1px solid rgba(20, 24, 20, 0.08);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .comparison-table th {
+      color: #101511;
+      background: #f6f7f2;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .comparison-table td:first-child {
+      color: #101511;
+      font-weight: 920;
+    }
+
+    .comparison-table .yes {
+      color: var(--accent-strong);
+      font-weight: 950;
+    }
+
+    .comparison-note {
+      margin: 14px 0 0;
+      color: rgba(20, 24, 20, 0.55);
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 650;
+    }
+
     .landing-final {
       padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 72px);
       background: #101511;
@@ -441,7 +703,7 @@
     .enterprise-cta {
       display: flex;
       justify-content: center;
-      padding: 28px 20px 0;
+      padding: 36px 20px 30px;
       background: #ffffff;
     }
 
@@ -474,7 +736,7 @@
       border-top: 1px solid rgba(20, 24, 20, 0.1);
       background: #ffffff;
       color: rgba(20, 24, 20, 0.64);
-      padding: 34px clamp(20px, 5vw, 72px) 28px;
+      padding: 46px clamp(20px, 5vw, 72px) 34px;
     }
 
     .footer-shell {
@@ -588,13 +850,20 @@
       display: none;
     }
 
-    .ios-dialog {
+    .ios-dialog,
+    .legal-dialog {
       width: min(420px, 100%);
       border: 1px solid rgba(20, 24, 20, 0.12);
       border-radius: 18px;
       background: #ffffff;
       box-shadow: 0 28px 90px rgba(20, 24, 20, 0.2);
       padding: 24px;
+    }
+
+    .legal-dialog {
+      width: min(760px, 100%);
+      max-height: min(760px, calc(100svh - 40px));
+      overflow: auto;
     }
 
     .ios-eyebrow {
@@ -620,6 +889,28 @@
       font-size: 14px;
       line-height: 1.48;
       font-weight: 650;
+    }
+
+    .legal-content {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+      color: rgba(20, 24, 20, 0.68);
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 650;
+    }
+
+    .legal-content h3 {
+      margin: 6px 0 0;
+      color: #101511;
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 920;
+    }
+
+    .legal-content p {
+      margin: 0;
     }
 
     .ios-actions {
@@ -751,7 +1042,10 @@
       }
 
       .feature-grid,
-      .pricing-grid {
+      .pricing-grid,
+      .proof-row,
+      .workflow-grid,
+      .usecase-grid {
         grid-template-columns: 1fr;
       }
 
@@ -785,6 +1079,30 @@
 
       .hero-control-strip {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .landing-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-live-frame {
+        bottom: 28%;
+      }
+
+      .hero-popout-chip {
+        left: 9%;
+        right: 9%;
+        top: auto;
+        bottom: 19%;
+        max-width: none;
+      }
+
+      .comparison-wrap {
+        overflow-x: auto;
+      }
+
+      .comparison-table {
+        min-width: 680px;
       }
 
       .enterprise-pill {
@@ -2158,6 +2476,7 @@
       </div>
       <div class="landing-links">
         <button class="landing-link" type="button" data-landing-target="features">Features</button>
+        <button class="landing-link" type="button" data-landing-target="comparison">Compare</button>
         <button class="landing-link" type="button" data-landing-target="pricing">Pricing</button>
         <button class="landing-secondary" id="landingLoginButton" type="button">Sign in</button>
       </div>
@@ -2167,11 +2486,25 @@
       <div>
         <p class="landing-kicker">Browser studio for confident creators</p>
         <h1 class="landing-title">m<span class="ai-accent">AI</span>Prompter</h1>
-        <p class="landing-copy">Read naturally, stay close to the lens, record locally, and ship cleaner videos without a teleprompter rig.</p>
+        <p class="landing-copy">A camera-first teleprompter SaaS for creators, founders, coaches, and teams who need natural eye contact, voice-responsive pacing, and local browser recording without buying a rig.</p>
         <div class="landing-actions">
           <button class="landing-primary" id="landingStartButton" type="button">Start free</button>
           <button class="landing-secondary" id="landingDemoButton" type="button">Try teleprompter</button>
           <button class="landing-secondary" type="button" data-landing-target="pricing">View plans</button>
+        </div>
+        <div class="landing-metrics" aria-label="mAIPrompter product metrics">
+          <div class="landing-metric">
+            <strong>30 sec</strong>
+            <span>Typical browser setup: open, paste, rehearse.</span>
+          </div>
+          <div class="landing-metric">
+            <strong>4K</strong>
+            <span>Selectable capture request when your camera supports it.</span>
+          </div>
+          <div class="landing-metric">
+            <strong>0 install</strong>
+            <span>Runs from a browser tab for web-first teams.</span>
+          </div>
         </div>
         <div class="landing-proof" aria-label="Product highlights">
           <span>Voice-responsive scrolling</span>
@@ -2183,9 +2516,13 @@
 
       <div class="hero-device" aria-label="mAIPrompter product preview">
         <div class="hero-video-plane"></div>
-        <div class="hero-face" aria-hidden="true"></div>
+        <div class="hero-live-frame" aria-hidden="true"></div>
         <div class="hero-prompt-band">
-          <p class="hero-prompt-text">Look into the lens. Your words follow your voice while the camera stays clear.</p>
+          <p class="hero-prompt-text">Read close to the webcam. The prompter moves when your voice moves.</p>
+        </div>
+        <div class="hero-popout-chip" aria-hidden="true">
+          <span>Camera-line mode</span>
+          Pop the script below your lens while the main screen stays clear for lighting and framing.
         </div>
         <div class="hero-control-strip" aria-hidden="true">
           <span><strong>4K</strong>Camera</span>
@@ -2199,6 +2536,7 @@
     <section class="landing-section" id="features">
       <div class="section-shell">
         <h2 class="section-heading">A teleprompter built around eye contact, not keyboard panic.</h2>
+        <p class="section-intro">Most basic browser prompters solve only one thing: moving text. mAIPrompter is designed around the full recording moment: camera line, audio input, readable pacing, and export control.</p>
         <div class="feature-grid">
           <div class="feature-tile">
             <strong>Camera-line reading</strong>
@@ -2216,9 +2554,141 @@
       </div>
     </section>
 
+    <section class="landing-section alt" id="proof">
+      <div class="section-shell">
+        <h2 class="section-heading">Built for the problems creators actually feel on camera.</h2>
+        <p class="section-intro">The value is not just scrolling text. It is fewer visible eye drops, fewer awkward starts and stops, and a calmer recording workflow when the video matters.</p>
+        <div class="proof-row">
+          <div class="proof-item">
+            <strong>2-4</strong>
+            <span>Readable lines in camera-line mode so your eyes stay close to the lens instead of scanning a full page.</span>
+          </div>
+          <div class="proof-item">
+            <strong>720p-4K</strong>
+            <span>Quality choices that request HD, Full HD, 1440p, or UHD based on the real camera connected.</span>
+          </div>
+          <div class="proof-item">
+            <strong>Local</strong>
+            <span>Camera and microphone recording happens in the browser, reducing unnecessary upload steps.</span>
+          </div>
+          <div class="proof-item">
+            <strong>Free + Pro</strong>
+            <span>Free tier for trial usage, paid tiers for watermark-free creator and studio workflows.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" id="workflow">
+      <div class="section-shell">
+        <h2 class="section-heading">From script to finished take without leaving the studio.</h2>
+        <p class="section-intro">mAIPrompter is shaped for solo creators and small teams who need fast output, not another complicated production tool.</p>
+        <div class="workflow-grid">
+          <div class="workflow-step">
+            <span>01</span>
+            <strong>Paste or edit</strong>
+            <p>Drop in your script, adjust font size, and prepare a readable camera-line view.</p>
+          </div>
+          <div class="workflow-step">
+            <span>02</span>
+            <strong>Choose devices</strong>
+            <p>Select your USB camera, built-in camera, laptop mic, or external podcast microphone.</p>
+          </div>
+          <div class="workflow-step">
+            <span>03</span>
+            <strong>Read naturally</strong>
+            <p>Use smooth manual pacing or experimental voice-responsive scrolling for a more natural rhythm.</p>
+          </div>
+          <div class="workflow-step">
+            <span>04</span>
+            <strong>Record locally</strong>
+            <p>Start, pause, resume, stop, and download your take from the same browser interface.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section alt" id="comparison">
+      <div class="section-shell">
+        <h2 class="section-heading">Why mAIPrompter instead of a basic online teleprompter?</h2>
+        <p class="section-intro">Basic tools are useful for scrolling a script. mAIPrompter is built for recording delivery, camera confidence, and SaaS-ready creator workflows.</p>
+        <div class="comparison-wrap">
+          <table class="comparison-table" aria-label="mAIPrompter comparison">
+            <thead>
+              <tr>
+                <th>Capability</th>
+                <th>Basic online prompters</th>
+                <th>Traditional rig workflow</th>
+                <th>mAIPrompter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Camera-line reading</td>
+                <td>Usually full-screen text away from the lens.</td>
+                <td>Good, but needs physical glass and setup.</td>
+                <td class="yes">Pop-out reading window designed for laptop webcam alignment.</td>
+              </tr>
+              <tr>
+                <td>Voice pacing</td>
+                <td>Often fixed-speed or limited voice mode.</td>
+                <td>Usually operator controlled.</td>
+                <td class="yes">Experimental speech-responsive scrolling that pauses and resumes with voice activity.</td>
+              </tr>
+              <tr>
+                <td>Recording controls</td>
+                <td>May require a second recording app.</td>
+                <td>Requires camera app, capture card, or studio software.</td>
+                <td class="yes">Start, pause, resume, stop, device selection, and export in one browser flow.</td>
+              </tr>
+              <tr>
+                <td>Mirror handling</td>
+                <td>Mirror text is common; recording orientation varies.</td>
+                <td>Depends on hardware and camera settings.</td>
+                <td class="yes">Separate preview and export orientation controls for front-camera workflows.</td>
+              </tr>
+              <tr>
+                <td>Team monetization</td>
+                <td>Usually a tool, not a platform.</td>
+                <td>Hardware cost scales per setup.</td>
+                <td class="yes">Free, Creator, Studio, and enterprise roadmap built into the product direction.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="comparison-note">Comparison is based on common publicly listed capabilities across browser teleprompters and production rig workflows. Final camera resolution, MP4 support, and voice behavior depend on browser and device support.</p>
+      </div>
+    </section>
+
+    <section class="landing-section" id="use-cases">
+      <div class="section-shell">
+        <h2 class="section-heading">For the videos where delivery changes trust.</h2>
+        <p class="section-intro">A teleprompter is not just for newsrooms. It helps anyone explain clearly when the camera is running and the message has to land.</p>
+        <div class="usecase-grid">
+          <div class="usecase-item">
+            <strong>Founders</strong>
+            <p>Pitch updates, investor videos, sales explainers, and thought-leadership recordings.</p>
+          </div>
+          <div class="usecase-item">
+            <strong>Educators</strong>
+            <p>Course modules, lesson intros, training videos, and repeatable classroom content.</p>
+          </div>
+          <div class="usecase-item">
+            <strong>Coaches</strong>
+            <p>Program videos, webinar scripts, reels, and client-facing authority content.</p>
+          </div>
+          <div class="usecase-item">
+            <strong>Teams</strong>
+            <p>Product announcements, internal communications, support videos, and SOP walkthroughs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="landing-section" id="pricing">
       <div class="section-shell">
         <h2 class="section-heading">Free to start. Paid when the watermark needs to disappear.</h2>
+        <p class="section-intro">Keep the entry barrier low, then upgrade when the output needs to be client-ready, brand-safe, and watermark-free.</p>
         <div class="pricing-grid">
           <div class="pricing-tile">
             <strong>Free</strong>
@@ -2294,6 +2764,7 @@
             <nav class="footer-nav" aria-label="Platform links">
               <a class="footer-link" href="/">Home</a>
               <a class="footer-link" href="#features">Features</a>
+              <a class="footer-link" href="#comparison">Comparison</a>
               <a class="footer-link" href="#pricing">Pricing</a>
               <a class="footer-link" href="#signin" id="footerSignInLink">Sign in</a>
             </nav>
@@ -2302,10 +2773,10 @@
           <div>
             <p class="footer-heading">Compliance</p>
             <nav class="footer-nav" aria-label="Legal policies">
-              <a class="footer-link" href="/legal/terms">Terms &amp; Conditions</a>
-              <a class="footer-link" href="/legal/privacy">Privacy Policy</a>
-              <a class="footer-link" href="/legal/refund">Refund &amp; Cancellation Policy</a>
-              <a class="footer-link" href="mailto:privacy@syncrasystems.com">Privacy contact</a>
+              <a class="footer-link" href="#terms" data-legal="terms">Terms &amp; Conditions</a>
+              <a class="footer-link" href="#privacy" data-legal="privacy">Privacy Policy</a>
+              <a class="footer-link" href="#refund" data-legal="refund">Refund &amp; Cancellation Policy</a>
+              <a class="footer-link" href="#contact" data-legal="contact">Primary contact</a>
             </nav>
           </div>
         </div>
@@ -2337,6 +2808,18 @@
           <span>Get Android <strong>App</strong></span>
         </a>
         <button class="button" id="closeIosModalButton" type="button">Close</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="ios-modal hidden" id="legalModal" aria-label="mAIPrompter policy information">
+    <div class="legal-dialog" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+      <p class="ios-eyebrow" id="legalModalEyebrow">Compliance</p>
+      <h2 class="ios-title" id="legalModalTitle">Policy</h2>
+      <div class="legal-content" id="legalModalContent"></div>
+      <div class="ios-actions">
+        <a class="button primary" id="legalContactLink" href="mailto:hello@syncrasystems.com">Email Syncra Systems LLP</a>
+        <button class="button" id="closeLegalModalButton" type="button">Close</button>
       </div>
     </div>
   </section>
@@ -2891,6 +3374,13 @@ Sign in when you are ready to record for real.</p>
       const iosBadgeButton = document.getElementById("iosBadgeButton");
       const iosModal = document.getElementById("iosModal");
       const closeIosModalButton = document.getElementById("closeIosModalButton");
+      const legalModal = document.getElementById("legalModal");
+      const legalModalEyebrow = document.getElementById("legalModalEyebrow");
+      const legalModalTitle = document.getElementById("legalModalTitle");
+      const legalModalContent = document.getElementById("legalModalContent");
+      const legalContactLink = document.getElementById("legalContactLink");
+      const closeLegalModalButton = document.getElementById("closeLegalModalButton");
+      const legalLinks = document.querySelectorAll("[data-legal]");
       const footerSignInLink = document.getElementById("footerSignInLink");
       const footerYear = document.getElementById("footerYear");
       const authGate = document.getElementById("authGate");
@@ -3001,18 +3491,18 @@ Sign in when you are ready to record for real.</p>
       const legacyUsageKey = "mai-prompter-usage-v1";
       const creatorAccount = {
         email: "creator@maiprompter.local",
-        workspace: "Synchra Systems LLP",
+        workspace: "Syncra Systems LLP",
         role: "super_admin",
         plan: "Creator Unlimited"
       };
       const platformConfig = {
         brand: "mAIPrompter",
-        legalEntity: "Synchra Systems LLP",
+        legalEntity: "Syncra Systems LLP",
         currency: "INR",
         freeTier: {
           prompts: 3,
           maxCharactersPerPrompt: 1000,
-          watermark: "mAIPrompter | Created by Synchra Systems LLP"
+          watermark: "mAIPrompter | Created by Syncra Systems LLP"
         },
         paidTiers: [
           { id: "starter", name: "Starter", priceMonthly: 99, prompts: 30, watermark: false },
@@ -3415,6 +3905,73 @@ Sign in when you are ready to record for real.</p>
       function handleIosModalClick(event) {
         if (event.target === iosModal) {
           closeIosModal();
+        }
+      }
+
+      const legalPolicies = {
+        terms: {
+          eyebrow: "Terms & Conditions",
+          title: "mAIPrompter Terms & Conditions",
+          contact: "mailto:hello@syncrasystems.com",
+          sections: [
+            ["Service scope", "mAIPrompter provides browser-based teleprompter, local recording, script editing, device selection, and export controls. Some features depend on the browser, operating system, and connected camera or microphone."],
+            ["Free and paid access", "The free tier may include limits such as prompt count, prompt length, and export watermarking. Paid tiers are intended for watermark-free and higher-usage creator or studio workflows."],
+            ["User responsibility", "Users are responsible for scripts, recorded content, permissions, consent, storage, and any publishing decisions made after export."],
+            ["Availability", "The current platform is a web-first product. SaaS, payment, mobile, and enterprise features may be added or changed as the product matures."]
+          ]
+        },
+        privacy: {
+          eyebrow: "Privacy Policy",
+          title: "mAIPrompter Privacy Policy",
+          contact: "mailto:privacy@syncrasystems.com",
+          sections: [
+            ["Local-first recording", "Camera and microphone capture is initiated by the browser only after user permission. Recordings are created locally in the browser session and downloaded by the user unless future cloud features are explicitly enabled."],
+            ["Account data", "The current local preview uses browser storage for demo sign-in, saved defaults, and workspace simulation. Production authentication and payments will use configured third-party services."],
+            ["Microphone and camera access", "Device access is used for teleprompter recording, microphone testing, and experimental voice-responsive scrolling. Users can revoke permissions through browser settings."],
+            ["Privacy contact", "For privacy questions, contact Syncra Systems LLP at privacy@syncrasystems.com."]
+          ]
+        },
+        refund: {
+          eyebrow: "Refund & Cancellation",
+          title: "Refund & Cancellation Policy",
+          contact: "mailto:hello@syncrasystems.com",
+          sections: [
+            ["Free tier", "The free tier is available without subscription charges and may include watermarking or usage limits."],
+            ["Paid subscription cancellation", "When paid plans are enabled, users should be able to cancel future renewals through the billing provider or account billing area."],
+            ["Refund window", "For launch, Syncra Systems LLP can review refund requests case by case within seven days of purchase, subject to payment gateway rules and actual usage."],
+            ["Gateway dependency", "Final refund timelines depend on the selected payment gateway, such as Razorpay, Stripe, or another configured provider."]
+          ]
+        },
+        contact: {
+          eyebrow: "Primary Contact",
+          title: "Contact Syncra Systems LLP",
+          contact: "mailto:hello@syncrasystems.com",
+          sections: [
+            ["Business contact", "For partnerships, custom creator studios, team rollouts, and enterprise onboarding, email hello@syncrasystems.com."],
+            ["Privacy contact", "For privacy or data questions, email privacy@syncrasystems.com."],
+            ["Product ownership", "mAIPrompter is developed, owned, and maintained by Syncra Systems LLP as part of its creator infrastructure roadmap."]
+          ]
+        }
+      };
+
+      function openLegalModal(type) {
+        const policy = legalPolicies[type] || legalPolicies.contact;
+        legalModalEyebrow.textContent = policy.eyebrow;
+        legalModalTitle.textContent = policy.title;
+        legalContactLink.href = policy.contact;
+        legalModalContent.innerHTML = policy.sections.map(([heading, copy]) => (
+          `<section><h3>${heading}</h3><p>${copy}</p></section>`
+        )).join("");
+        legalModal.classList.remove("hidden");
+      }
+
+      function closeLegalModal() {
+        legalModal.classList.add("hidden");
+      }
+
+      function handleLegalModalClick(event) {
+        if (event.target === legalModal) {
+          closeLegalModal();
         }
       }
 
@@ -5115,6 +5672,18 @@ Sign in when you are ready to record for real.</p>
       }
 
       function handleKeyboard(event) {
+        if (event.key === "Escape" && !iosModal.classList.contains("hidden")) {
+          event.preventDefault();
+          closeIosModal();
+          return;
+        }
+
+        if (event.key === "Escape" && !legalModal.classList.contains("hidden")) {
+          event.preventDefault();
+          closeLegalModal();
+          return;
+        }
+
         if (!state.authSession) return;
         if (state.activePanel === "dashboard") return;
 
@@ -5129,11 +5698,6 @@ Sign in when you are ready to record for real.</p>
         if (event.key === "Escape" && state.isEditing) {
           event.preventDefault();
           saveAndRead();
-        }
-
-        if (event.key === "Escape" && !iosModal.classList.contains("hidden")) {
-          event.preventDefault();
-          closeIosModal();
         }
       }
 
@@ -5181,6 +5745,14 @@ Sign in when you are ready to record for real.</p>
       iosBadgeButton.addEventListener("click", openIosModal);
       closeIosModalButton.addEventListener("click", closeIosModal);
       iosModal.addEventListener("click", handleIosModalClick);
+      closeLegalModalButton.addEventListener("click", closeLegalModal);
+      legalModal.addEventListener("click", handleLegalModalClick);
+      legalLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          openLegalModal(link.dataset.legal);
+        });
+      });
       landingDemoButton.addEventListener("click", openLandingDemo);
       closeDemoButton.addEventListener("click", closeLandingDemo);
       demoPlayButton.addEventListener("click", toggleDemoScroll);
