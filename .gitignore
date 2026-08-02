@@ -6,3 +6,4 @@
 *.tmp
 .vercel
 node_modules
+.env*
